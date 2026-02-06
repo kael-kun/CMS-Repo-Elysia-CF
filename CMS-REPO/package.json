@@ -1,0 +1,26 @@
+{
+  "name": "cms-repo",
+  "version": "1.0.50",
+  "scripts": {
+    "dev": "bun run --watch src/server.ts",
+    "build": "bun build src/server.ts",
+    "start": "NODE_ENV=production bun src/server.ts",
+    "test": "bun test",
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "wrangler-dev": "wrangler dev src/index.ts --remote",
+    "wrangler-login": "wrangler login",
+    "wrangler-types": "wrangler types"
+  },
+  "dependencies": {
+    "@cloudflare/types": "^7.0.0",
+    "@elysiajs/cors": "^1.4.1",
+    "@elysiajs/openapi": "^1.4.14",
+    "elysia": "latest",
+    "wrangler": "^4.59.3"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260122.0",
+    "bun-types": "latest"
+  },
+  "module": "src/index.js"
+}
